@@ -42,7 +42,7 @@ jobs:
         run: |
           if [ -n "$BASE_PATH" ] && [ "$BASE_PATH" != "/" ]; then
             find public -name '*.html' -print0 | xargs -0 perl -pi -e \
-              's{\b(href|src)=("?)/(?!/|\Q$ENV{BASE_PATH}\E/)}{$1=$2$ENV{BASE_PATH}/}g'
+              's{\b(href|src)=("?)(?=/)(?!//|\Q$ENV{BASE_PATH}\E/)}{$1=$2$ENV{BASE_PATH}}g'
           fi
       - uses: actions/upload-pages-artifact@v3
         with:
