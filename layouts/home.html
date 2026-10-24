@@ -1,7 +1,7 @@
 {{- define "main" }}
 {{- partial "hero.html" . }}
 
-<div class="home-grid">
+<div class="with-sidebar">
   <section class="home-posts">
     {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
     {{- $paginator := .Paginate $pages }}

@@ -1,4 +1,8 @@
 {{- $posts := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{- $years := $posts.GroupByDate "2006" }}
+{{- /* Open the newest year, or on a post page the year it was written */}}
+{{- $openYear := (index $years 0).Key }}
+{{- if and .IsPage (in site.Params.mainSections .Type) }}{{ $openYear = .Date.Format "2006" }}{{ end }}
 <aside class="sidebar">
   <section class="widget widget-about">
     {{- with resources.Get "images/sqlnikon-logo.jpg" }}
@@ -13,7 +17,7 @@
     <h3>Recent Posts</h3>
     <ul>
       {{- range first 5 $posts }}
-      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      <li><a href="{{ .RelPermalink }}"{{ if eq .RelPermalink $.RelPermalink }} aria-current="page"{{ end }}>{{ .Title }}</a></li>
       {{- end }}
     </ul>
   </section>
@@ -21,10 +25,10 @@
   <section class="widget">
     <h3>Archives</h3>
     <ul class="widget-archives">
-      {{- range $posts.GroupByDate "2006" }}
+      {{- range $years }}
       {{- $year := .Key }}
       <li>
-        <details{{ if eq $year (index ($posts.GroupByDate "2006") 0).Key }} open{{ end }}>
+        <details{{ if eq $year $openYear }} open{{ end }}>
           <summary><a href="{{ "archives/" | relURL }}#{{ $year }}">{{ $year }}</a> <span class="count">{{ len .Pages }}</span></summary>
           <ul>
             {{- range .Pages.GroupByDate "January" }}
