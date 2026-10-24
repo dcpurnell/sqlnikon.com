@@ -7,7 +7,7 @@ tags: ["Automation", "SSIS"]
 archived_comments: [{"author": "Glenda Gable", "date": "2014-01-14 15:23:12", "text": "Here is my post - great topic, thanks! :) http://sql313.com/index.php/menu-main-blog/14-maincat-dba/cat-automate/51-tsql-tuesdays-50"}]
 ---
 
-[<img src="http://sqlchow.files.wordpress.com/2013/01/tsql2sday.png" class="alignleft" width="150" height="150" />](http://sqlchow.wordpress.com/2014/01/07/t-sql-tuesday-050-automation-how-much-of-it-is-the-same/)
+[<img src="https://sqlchow.files.wordpress.com/2013/01/tsql2sday.png" class="alignleft" width="150" height="150" />](https://sqlchow.wordpress.com/2014/01/07/t-sql-tuesday-050-automation-how-much-of-it-is-the-same/)
 
 This month's T-SQL Tuesday topic is the reason I love being a DBA, automating repetitive tasks.  Hemanth Damecharla ([b](http://sqlchow.wordpress.com)\|[t](https://twitter.com/sqlchow)) picked a timely topic, as you start the new year, are there certain tasks that you need to automate that tend to sit on the corner of your desk yelling at you?
 
