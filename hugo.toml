@@ -48,6 +48,14 @@ enableRobotsTXT = true
   comments = true
   mainSections = ['posts']
 
+  # New comments are GitHub Discussions in this repo (giscus.app). Announcements is the
+  # category giscus recommends: only maintainers and giscus can start threads in it.
+  [params.giscus]
+    repo = 'dcpurnell/sqlnikon.com'
+    repoId = 'R_kgDOVV361w'
+    category = 'Announcements'
+    categoryId = 'DIC_kwDOVV36184DJgTf'
+
   [params.homeInfoParams]
     Title = 'SQLNikon'
     Content = 'Doug Purnell on SQL Server, photography, and the backyard BBQ.'

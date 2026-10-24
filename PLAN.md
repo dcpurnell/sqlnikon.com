@@ -145,11 +145,11 @@ any that return 404.
 - [x] Spot-check posts with code samples, images and embeds
 
 ### 3. Public repo: build the site
-- [ ] Create public `dcpurnell/sqlnikon.com` and scaffold Hugo + PaperMod
+- [x] Create public `dcpurnell/sqlnikon.com` and scaffold Hugo + PaperMod
 - [x] Add the converted posts, About, images and the Photography section
 - [x] Set permalinks, menus, RSS path and the author redirect
-- [ ] Add the archived-comments partial and Giscus
-- [ ] Add the GitHub Actions deploy workflow and turn on Pages (source: Actions)
+- [x] Add the archived-comments partial and Giscus
+- [x] Add the GitHub Actions deploy workflow and turn on Pages (source: Actions)
 - [x] Write `README.md`: how to write a post, add a photo walk, and change the theme
 
 ### 4. Preview and verify
