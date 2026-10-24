@@ -1,0 +1,88 @@
+baseURL = 'https://sqlnikon.com/'
+locale = 'en-us'
+title = 'SQLNikon'
+enableRobotsTXT = true
+
+[module]
+  [[module.imports]]
+    path = 'github.com/adityatelange/hugo-PaperMod'
+
+# Old WordPress URLs keep working: /2019/03/25/consolidating-life/, /category/x/, /tag/x/
+[permalinks]
+  posts = '/:year/:month/:day/:slug/'
+  categories = '/category/:slug/'
+  tags = '/tag/:slug/'
+
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
+
+# WordPress served RSS at /feed/; keep that path alongside Hugo's /index.xml.
+[outputFormats.feed]
+  mediaType = 'application/rss+xml'
+  baseName = 'index'
+  path = 'feed'
+
+[outputs]
+  home = ['HTML', 'RSS', 'JSON', 'feed']
+
+[markup.goldmark.renderer]
+  unsafe = true  # converted posts keep some raw HTML: figures, galleries, audio
+
+[markup.highlight]
+  noClasses = false
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  description = 'SQL Server, photography, and the backyard BBQ.'
+  author = 'Doug Purnell'
+  defaultTheme = 'auto'
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = false
+  ShowCodeCopyButtons = true
+  ShowToc = false
+  comments = true
+  mainSections = ['posts']
+
+  [params.homeInfoParams]
+    Title = 'SQLNikon'
+    Content = 'Doug Purnell on SQL Server, photography, and the backyard BBQ.'
+
+  [[params.socialIcons]]
+    name = 'twitter'
+    url = 'https://twitter.com/sqlnikon'
+  [[params.socialIcons]]
+    name = 'github'
+    url = 'https://github.com/dcpurnell'
+  [[params.socialIcons]]
+    name = 'rss'
+    url = '/index.xml'
+
+  [params.fuseOpts]
+    keys = ['title', 'summary', 'content']
+
+[menus]
+  [[menus.main]]
+    name = 'Archive'
+    pageRef = '/archives'
+    weight = 10
+  [[menus.main]]
+    name = 'Search'
+    pageRef = '/search'
+    weight = 20
+  [[menus.main]]
+    name = 'Tags'
+    pageRef = '/tags'
+    weight = 30
+  [[menus.main]]
+    name = 'Photography'
+    pageRef = '/photography'
+    weight = 40
+  [[menus.main]]
+    name = 'About'
+    pageRef = '/about'
+    weight = 50

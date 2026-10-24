@@ -1,0 +1,35 @@
+/* Photo galleries carried over from WordPress, and new photo walks */
+.post-content .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+  margin: 1.5em 0;
+}
+.post-content .gallery a { box-shadow: none; }
+.post-content .gallery img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  margin: 0;
+  border-radius: 4px;
+}
+
+/* WordPress floated small images beside the text */
+.post-content figure.alignleft,
+.post-content img.alignleft { float: left; margin: 0.3em 1.2em 0.8em 0; max-width: 45%; }
+.post-content figure.alignright,
+.post-content img.alignright { float: right; margin: 0.3em 0 0.8em 1.2em; max-width: 45%; }
+.post-content figure figcaption { font-size: 0.85em; text-align: center; color: var(--secondary); }
+.post-content::after { content: ""; display: block; clear: both; }
+@media (max-width: 600px) {
+  .post-content figure.alignleft, .post-content figure.alignright,
+  .post-content img.alignleft, .post-content img.alignright { float: none; max-width: 100%; margin: 1em 0; }
+}
+
+.post-content figure.audio audio { width: 100%; }
+
+.archived-comments { margin-top: 3em; border-top: 1px solid var(--border); padding-top: 1em; }
+.archived-comments .note { color: var(--secondary); font-size: 0.9em; }
+.archived-comment { margin: 1.2em 0; padding: 0.8em 1em; background: var(--code-bg); border-radius: 6px; }
+.archived-comment header { font-size: 0.9em; margin-bottom: 0.4em; }
+.giscus-comments { margin-top: 2em; }

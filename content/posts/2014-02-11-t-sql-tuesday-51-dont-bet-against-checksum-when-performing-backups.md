@@ -1,0 +1,13 @@
+---
+title: "T-SQL Tuesday #51 - Don't bet against CHECKSUM when performing backups"
+date: "2014-02-11T12:40:12"
+slug: "t-sql-tuesday-51-dont-bet-against-checksum-when-performing-backups"
+categories: ["SQL Server"]
+tags: ["Backup", "Checksum", "Corruption", "Maintennace Plans", "Ola Hallengren", "T-SQL Tuesday"]
+---
+
+[<img src="/wp-content/uploads/2014/01/t-sql-tuesday.png" class="size-full wp-image-630 alignnone" width="150" height="150" alt="Automating repetitive tasks" />](http://jasonbrimhall.info/2014/02/04/t-sql-tuesday-051-place-your-bets/)This month's T-SQL Tuesday is being hosted by Jason Brimhall ([blog](http://jasonbrimhall.info/) \| [Twitter](https://twitter.com/sqlrnnr)).  Jason's theme is about gambling with SQL Server.  What areas have you gambled with?  Are there tasks that you should be doing that you are betting won't be needed?  One came to mind for me, CHECKSUM.  I've always been a fan of Maintenance Plans.  They are an easy way to get basic maintenance tasks established on an instance of SQL Server.  The major down side of the built-in maintenance plans is no support for the CHECKSUM media option for [BACKUP DATABASE](http://technet.microsoft.com/en-us/library/ms186865.aspx).  If you are performing backups without this option enabled, you run the risk of the pages in the backup media not matching the pages stored in the database.  This is because without the CHECKSUM option, SQL Server doesn't know if the page written to the backup media was written out correctly.  The CHECKSUM option ensures that every page written out to your backup media has a checksum that matches the checksum of the page in the database.  The CHECKSUM option also goes as far as doing a checksum on the entire backup that the [RESTORE](http://technet.microsoft.com/en-us/library/ms186858.aspx) statement can take advantage of.  There is a performance impact for using the CHECKSUM option but as everyone says, your backup is only as good as your restore.  If you bet against your restore, your odds of a resume updating event just increased.
+
+Now that you understand the benefits of CHECKSUM for your backups, how do you integrate it into your backup process?  It's time to graduate from the built-in Maintenance Plans and move to Ola Hallengren's [SQL Server Maintenance Solution](http://ola.hallengren.com/).  The is by far the best maintenance scripts available within the SQL Server community.  Do yourself a favor and pull the scripts down to a test instance and give it a try.  I made the move a few months ago and have never looked back.
+
+Don't bet against CHECKSUM when performing your backups!

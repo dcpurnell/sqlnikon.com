@@ -1,0 +1,20 @@
+---
+title: "2011 was the year of #SQLFamily"
+date: "2011-12-31T23:17:02"
+slug: "2011-was-the-year-of-sqlfamily"
+categories: ["SQL Server"]
+tags: ["SQLFamily", "2005", "2008", "2008 R2", "blogging", "Brent Ozar", "DBA", "PASS", "Pragmatic Works", "SQLSaturday", "training", "Twitter", "WordPress"]
+archived_comments: [{"author": "Brent Ozar", "date": "2012-01-01 07:56:40", "text": "Glad I could help get you started, man, and good luck with the blog in 2012!"}, {"author": "SQL Nikon", "date": "2012-01-01 08:09:40", "text": "Thanks Brent!"}]
+---
+
+As the name suggests, SQL Family feels like family.  There is no other professional organization in the world that supports a product line as well as \#SQLFamily.  My introduction to \#SQLFamily was in the summer of 2011 when I decided to get back into SQL Server full-time after going to the dark side, management, for the two previous years.  I had a strong background in SQL Server 2000 & 2005 but not the full-time experience under 2008 & 2008 R2.
+
+As I started searching for training opportunities for SQL Server, I came across [Pragmatic Works](http://www.pragmaticworks.com "Pragmatic Works").  Every Tuesday and Thursday throughout the year, they have a one hour web cast on all areas of SQL Server.  This allowed me to catch up on what was new under 2008 and brush up on the daily DBA tasks that I was accustomed to.  Each of the presenters had a personal blog and twitter address that had even more content over the session that was offered.  This got me interested in blogging for myself and starting to use twitter.  As I started searching for ways to get started in blogging and using twitter, I came across Brent Ozar ([blog](http://www.brentozar.com/ "Brent Ozar Blog"), [twitter](https://twitter.com/#!/BrentO "Brent's Twitter Feed")).  He built a great [guide](http://www.brentozar.com/twitter/book/) to help understand what twitter was all about.  I wasn't interested in following celebrities or sports figures, I just wanted to use it for SQL Server.  It just so happened that Brent was a DBA and a photographer.  This one-two punch was just the right mix to start me on my way into WordPress and Twitter.
+
+As I started following Brent, I started reading posts from him and other SQL Server professionals about the passion the SQL Server community had for helping others.  This was perfect for me as I started on my way to becoming a full-time DBA.  Each new blog entry or twitter post gave me a new understand of SQL Server and how strong the community was.  This also introduced me to PASS and the local user groups that were offered in my area.  As I started attending the local events, that same passion within the on-line community was equally as strong at the local level.  This allowed me to network with other SQL Server DBAs and get their input on ways to get back into the field full-time.
+
+The local PASS events lead me to [SQL Saturday](http://www.sqlsaturday.com/).  I was able to attend the Atlanta \#89 event in the fall of 2011.  This was very eye-opening for me.  There were over 400 people gathered for a full day of free training on a Saturday.  I was finally able to meet a few folks that I had only meet via twitter.  The highlight for me was hearing Bob Ward from Microsoft talk about wait types.  His session was level 500 and then some.  It was cool to see the inter-workings of SQL Server from one of the people who has access to the source code.
+
+By the fall of 2011, I was already talking to a few companies about DBA positions and felt confident about finding the perfect DBA job.  As I accepted my current DBA role, I thought back to the family that got me there.  With out \#SQLFamily, this would have not been possible.  This has given me the drive to give back to the community so others out there can find their perfect DBA role like I did.  My first step is our local PASS chapter and presenting during the summer of 2012.  I'm also working on blogging more regularly throughout the month, so others can learn from my view of being a SQL Server DBA.
+
+I love being a part of the \#SQLFamily.  Looking forward to a great year in 2012!

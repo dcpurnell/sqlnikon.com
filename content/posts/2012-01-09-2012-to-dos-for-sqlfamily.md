@@ -1,0 +1,25 @@
+---
+title: "2012 To Do's for #SQLFamily"
+date: "2012-01-09T21:31:54"
+slug: "2012-to-dos-for-sqlfamily"
+categories: ["SQL Server"]
+tags: ["mememonday", "SQLFamily", "tsql2sday", "blogging", "PASS", "PASS BI"]
+---
+
+As I sat down and wrote out my goals for 2012 for my job, they didn't take into account my blogging, user groups and [\#SQLFamily](https://twitter.com/#!/search/%23sqlfamily).  This is why this is a perfect [\#mememonday](https://twitter.com/#!/search/%23mememonday) project.  You can read more about \#mememonday [here](http://thomaslarock.com/2012/01/mememonday-for-january/) from Thomas Larock ([Blog](http://thomaslarock.com/), [Twitter](https://twitter.com/#!/SQLRockstar)).
+
+I'm fairly new to the \#SQLFamily.  I didn't start getting involved till June 2011 and up to now, didn't participate in monthly blogging like [\#mememonday](https://twitter.com/#!/search/%23mememonday) or [\#tsql2sday](https://twitter.com/#!/search/%23tsql2sday).  For the past 8 months have just been digesting information like I was eating at Golden Corral.  Twitter, webcasts and RSS feeds can take hours a day to stay updated.  I still find it hard to get through all the Twitter feeds a day and finally had to limit the number of RSS subscriptions under Google Reader so those didn't get behind as well.  As I write this, I can see TweetDeck notifications going off every few minutes.
+
+So here are my personal goals list for \#SQLFamily in 2012:
+
+1.  Continue to attend [Triad PASS](http://triad.sqlpass.org/) and [Triad BI PASS](http://winston-salem.sqlpass.org/).  The part that I'm going to work on this month is to blogging about my experiences.  I've seen a few other posts related to this item and thought it was a great idea.  This will help others that have not started, to attend their local [PASS chapters](http://www.sqlpass.org/PASSChapters.aspx) to see the topics discussed how much fun they are.
+2.  Start attending the [virtual PASS chapters](http://www.sqlpass.org/Community/VirtualChapters.aspx).  There are some great virtual chapters held every week that discuss topics that you may not otherwise receive at your local events.  Here to, I aim to blog about each one to keep my writing skills fresh.
+3.  Present at Triad PASS in June 2012.  Our local Triad PASS chapter leader, Kevin Goode, asked me to present and I decided to jump in.  This will be my first time ever presenting anything outside of lunch and learns through work.  I have not picked a topic yet, but because I started a new job in November 2011, I'm thinking about walking though my management processes for my new SQL Server instances.
+4.  Stay involved in [\#mememonday](https://twitter.com/#!/search/%23mememonday) events.  This was started by Thomas Larock  ([Blog](http://thomaslarock.com/), [Twitter](https://twitter.com/#!/SQLRockstar)) and I'm looking forward to these monthly blogs. This is a great way to blog about something that you otherwise may not write about.  I feel too many times and get in my comfort zone of daily DBA tasks and don't stretch my boundaries to learn new things with in SQL Server.
+5.  Start blogging for [\#tsql2sday](https://twitter.com/#!/search/%23tsql2sday).  This was started by Adam Machanic ([blog](http://sqlblog.com/blogs/adam_machanic), [Twitter](https://twitter.com/#!/AdamMachanic)) and just like with \#mememonday, will give me the opportunity to participate in blogs about items I'm unfamiliar with.  This will require researching a topic and writing about it.  I'm looking forward to this one.
+6.  [Midnight DBA](http://midnightdba.itbookworm.com/).  Sean ([blog](http://www.midnightdba.com/DBARant/), [Twitter](https://twitter.com/#!/midnightdba)) and Jen ([blog](http://www.midnightdba.com/Jen/), [Twitter](https://twitter.com/#!/midnightdba)) make this live broadcast a blast.  I'm guilty of falling asleep before the show starts but my goal this year is to catch at least 2 shows a month live.  The pre and post shows are just as fun as the main show.  They cover technical topics with a fun twist and their sense of humor keeps me laughing through the entire show.  This will be another event that I plan to blog about.
+7.  [Brent Ozar PLF's Tech Triage Tuesday](http://www.brentozar.com/community/upcoming-events/).  This is a great half hour weekly webcast that covers all aspects of SQL Server.  Brent Ozar ([blog](http://www.brentozar.com/), [Twitter](https://twitter.com/#!/BrentO)) and his team, cover topics from performance tuning to SANs, each week is a must see.  As you can guess, I'm going to blog about these as well.
+
+My goals this year for \#SQLFamily are all around bringing awareness to the training opportunities that are available to everyone.  Whether you are able to attend these events live or watch them from the comfort of your home, my goal is to spark interest in all the events.  This is how I was introduced to \#SQLFamily back in June 2011 and I hope I can do the same for other SQL Server DBAs and developers out there.
+
+Have a great year \#SQLFamily,

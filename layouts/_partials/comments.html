@@ -1,0 +1,32 @@
+{{- with .Params.archived_comments }}
+<section class="archived-comments">
+  <h2>Archived comments</h2>
+  <p class="note">From the original WordPress site.</p>
+  {{- range . }}
+  <article class="archived-comment">
+    <header><strong>{{ .author }}</strong> · <time datetime="{{ .date }}">{{ time.Format "January 2, 2006" .date }}</time></header>
+    {{ .text | markdownify }}
+  </article>
+  {{- end }}
+</section>
+{{- end }}
+{{- with site.Params.giscus }}{{ if .repoId }}
+<section class="giscus-comments">
+<script src="https://giscus.app/client.js"
+        data-repo="{{ .repo }}"
+        data-repo-id="{{ .repoId }}"
+        data-category="{{ .category }}"
+        data-category-id="{{ .categoryId }}"
+        data-mapping="pathname"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+</section>
+{{- end }}{{ end }}
