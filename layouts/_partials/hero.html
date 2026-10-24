@@ -1,0 +1,14 @@
+{{- /* Banner photo across the top of the home page. Swap the image by replacing
+       assets/images/eagle.jpg, or set params.hero.image in hugo.toml. */ -}}
+{{- with resources.Get (site.Params.hero.image | default "images/eagle.jpg") }}
+{{- $small := .Resize "800x webp q80" }}
+{{- $medium := .Resize "1600x webp q80" }}
+{{- $large := .Resize "2400x webp q80" }}
+<div class="hero">
+  <img src="{{ $medium.RelPermalink }}"
+       srcset="{{ $small.RelPermalink }} 800w, {{ $medium.RelPermalink }} 1600w, {{ $large.RelPermalink }} 2400w"
+       sizes="100vw" alt="{{ site.Params.hero.alt | default "" }}"
+       style="object-position: {{ site.Params.hero.position | default "50% 50%" }}"
+       width="{{ $large.Width }}" height="{{ $large.Height }}">
+</div>
+{{- end }}

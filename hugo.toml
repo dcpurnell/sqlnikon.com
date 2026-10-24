@@ -56,9 +56,19 @@ enableRobotsTXT = true
     category = 'Announcements'
     categoryId = 'DIC_kwDOVV36184DJgTf'
 
-  [params.homeInfoParams]
-    Title = 'SQLNikon'
-    Content = 'Doug Purnell on SQL Server, photography, and the backyard BBQ.'
+  [params.hero]
+    image = 'images/eagle.jpg'
+    alt = 'A bald eagle in flight against a blue sky'
+    position = '50% 32%'  # which part of the photo stays in view when cropped
+
+  [params.sidebar]
+    about = "I'm Doug Purnell, a SQL Server DBA in Greensboro, NC. I write about SQL Server, photography, and the backyard BBQ."
+
+  [params.assets]
+    favicon = 'favicon-32x32.png'
+    favicon16x16 = 'favicon-16x16.png'
+    favicon32x32 = 'favicon-32x32.png'
+    apple_touch_icon = 'apple-touch-icon.png'
 
   [[params.socialIcons]]
     name = 'twitter'

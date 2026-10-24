@@ -1,0 +1,48 @@
+{{- $posts := where site.RegularPages "Type" "in" site.Params.mainSections }}
+<aside class="sidebar">
+  <section class="widget widget-about">
+    {{- with resources.Get "images/sqlnikon-logo.jpg" }}
+    {{- $logo := .Resize "160x webp q85" }}
+    <img src="{{ $logo.RelPermalink }}" alt="SQLNikon logo" width="80" height="80">
+    {{- end }}
+    <p>{{ site.Params.sidebar.about | markdownify }}</p>
+    <a href="{{ "about/" | relURL }}">More about me »</a>
+  </section>
+
+  <section class="widget">
+    <h3>Recent Posts</h3>
+    <ul>
+      {{- range first 5 $posts }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{- end }}
+    </ul>
+  </section>
+
+  <section class="widget">
+    <h3>Archives</h3>
+    <ul class="widget-archives">
+      {{- range $posts.GroupByDate "2006" }}
+      {{- $year := .Key }}
+      <li>
+        <details{{ if eq $year (index ($posts.GroupByDate "2006") 0).Key }} open{{ end }}>
+          <summary><a href="{{ "archives/" | relURL }}#{{ $year }}">{{ $year }}</a> <span class="count">{{ len .Pages }}</span></summary>
+          <ul>
+            {{- range .Pages.GroupByDate "January" }}
+            <li><a href="{{ "archives/" | relURL }}#{{ $year }}-{{ .Key }}">{{ .Key }}</a> <span class="count">{{ len .Pages }}</span></li>
+            {{- end }}
+          </ul>
+        </details>
+      </li>
+      {{- end }}
+    </ul>
+  </section>
+
+  <section class="widget">
+    <h3>Categories</h3>
+    <ul>
+      {{- range site.Taxonomies.categories.ByCount }}
+      <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a> <span class="count">{{ .Count }}</span></li>
+      {{- end }}
+    </ul>
+  </section>
+</aside>
