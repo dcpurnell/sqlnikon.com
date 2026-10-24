@@ -59,13 +59,20 @@ theme's files never mix with the site's.
 | **Congo** | Blowfish's simpler predecessor, Tailwind-based | Tidy, good typography, several colour schemes, dark mode | Fewer layout choices than Blowfish. |
 | **Bear Cub / Hugo Bear Blog** | Minimal, almost no styling | Tiny and fast, nothing to break | No galleries, no search, very bare for Photography. |
 
-**Recommendation: PaperMod.** Most of this content is technical SQL Server
-writing, and PaperMod's readability, code highlighting and search suit it. The
-Photography section gets a custom list layout showing a thumbnail per photo walk.
+**Chosen: PaperMod** (decided 2026-10-24). Most of this content is technical SQL
+Server writing, and PaperMod's readability, code highlighting and search suit it.
 If Photography grows into a main focus, Stack is the alternative to try.
 
-Before deciding, build a preview of the converted posts in PaperMod and Stack
-side by side. Switching themes is a one-line config change.
+Customisations on top of PaperMod, all in this repo:
+
+- **Home page** (`layouts/home.html`): the bald eagle banner from the old site
+  (`assets/images/eagle.jpg`, set in `params.hero`), then posts with a sidebar.
+- **Sidebar** (`layouts/_partials/sidebar.html`) on the home page and every post
+  (`layouts/posts/single.html`): About with the SQL Nikon logo, Recent Posts,
+  Archives by year and month, Categories. On a post, its own year starts open.
+  About and Photography stay single-column.
+- **Favicon**: the SQL Nikon logo.
+- Styles in `assets/css/extended/sqlnikon.css`.
 
 ## Site structure
 
@@ -80,9 +87,9 @@ sqlnikon.com/
       <walk>.md             one file per future photo walk
   static/
     wp-content/uploads/     the 88 images, at their original paths
-    CNAME                   sqlnikon.com
-  layouts/                  small overrides (Photography list, archived comments)
+  layouts/                  home page, sidebar, post layout, archived comments
   .github/workflows/        Hugo build + Pages deploy
+  .github/dependabot.yml    monthly pull requests to update the pinned Actions
   README.md                 how to write a post or add a photo walk
 ```
 
@@ -107,8 +114,8 @@ any that return 404.
 - **The 11 existing comments** are converted to fixed text shown under their posts
   as "Archived comments": name, date and text only. No email, IP or website.
 - **New comments** go through Giscus, which stores them as GitHub Discussions in the
-  public repo. Setup: enable Discussions, create a "Comments" category, install
-  the giscus GitHub app on the repo, and map each post to a discussion by URL path.
+  public repo. Setup (done): Discussions enabled, giscus app installed, threads
+  in the Announcements category, mapped to each post by URL path.
   Commenters need a GitHub account. That suits a SQL audience.
 
 ## Photography
@@ -153,10 +160,39 @@ any that return 404.
 - [x] Write `README.md`: how to write a post, add a photo walk, and change the theme
 
 ### 4. Preview and verify
-- [ ] Review at `https://dcpurnell.github.io/sqlnikon.com/`
+- [x] Review at `https://dcpurnell.github.io/sqlnikon.com/` ("site looks great", 2026-10-24)
 - [x] Crawl the old sitemap URLs (local build: 138/138): every post, tag, category and image resolves
-- [ ] Check code blocks, images, dark mode and phone layout
-- [ ] Post a test Giscus comment, then delete it
+- [x] Crawl every internal link on the preview (82/82)
+- [x] Eagle banner and sidebar (home page and posts); checked at desktop and phone widths
+- [ ] Skim code blocks, dark mode and phone layout on a real phone
+- [ ] Post a test Giscus comment, then delete it from the repo's Discussions tab
+- [x] Security audit (2026-10-24), see below
+
+### Security audit (2026-10-24)
+
+Clean: the WordPress export and commenters' emails/IPs are only in the private repo;
+no secrets in the public repo's history; no GPS or camera data in public images;
+archived comments contain no HTML; secret scanning and push protection are on;
+Pages deploys only from `main`.
+
+Fixed:
+- [x] Pages publish rights (`pages: write`, `id-token: write`) moved to the deploy job.
+      The build job is read-only.
+- [x] Actions pinned to commit SHAs. Dependabot keeps them current; its first five
+      pull requests were merged and deployed successfully (checkout v7, setup-go v7,
+      configure-pages v6, upload-pages-artifact v5, deploy-pages v5).
+- [x] An `http://` image changed to `https://`; the converter now upgrades WordPress.com links.
+- [x] Private repo: removed a committed `__pycache__` file and ignored it.
+
+Accepted: no branch protection on `main` (single author); the converter uses
+Python's standard XML parser on Doug's own export.
+
+### Preview vs live links
+
+The preview lives under `/sqlnikon.com/`, so the deploy workflow's "Prefix post links
+for the preview path" step adds that prefix to root-relative links in posts. Once the
+custom domain is set, the base path is `/` and the step does nothing. Don't
+re-enable `canonifyURLs`: it breaks the menu and paging links on the preview.
 
 ### 5. Cut over (target: mid-November, well before Dec 8)
 - [ ] Verify sqlnikon.com for the `dcpurnell` account in GitHub Pages settings
@@ -169,7 +205,9 @@ any that return 404.
   - [ ] Delete the HostGator `MX` record and the `websitewelcome.com` SPF record.
         Add `v=spf1 -all` so nobody can send mail as sqlnikon.com.
 - [ ] Set the custom domain in Pages settings and tick **Enforce HTTPS**
-- [ ] Re-test URLs on the live domain. Submit the new sitemap to Google Search Console.
+- [ ] Re-test the 138 old URLs on the live domain, and check the preview link-prefix
+      step was skipped in the deploy log
+- [ ] Submit `https://sqlnikon.com/sitemap.xml` to Google Search Console
 
 ### 6. Wind down
 - [ ] Keep the WordPress site untouched until Dec 8 as a fallback
@@ -178,5 +216,15 @@ any that return 404.
 
 ## Open decisions
 
-- **Theme:** PaperMod recommended. Decide after the side-by-side preview.
-- **Feature images:** Stack needs one per post. With PaperMod they're optional.
+None. Theme decided (PaperMod). Feature images are optional with PaperMod.
+
+## Later, optional
+
+- Restore the Dropbox downloads (marked "no longer available") into `static/files/`
+  if the originals turn up.
+- PaperMod links a `safari-pinned-tab.svg` that doesn't exist. Harmless.
+
+## Next session
+
+Pick up at step 4's two open items, then step 5. Say "start the cutover" to go
+through the DNS changes one at a time.
