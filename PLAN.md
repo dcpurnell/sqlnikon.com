@@ -164,8 +164,8 @@ any that return 404.
 - [x] Crawl the old sitemap URLs (local build: 138/138): every post, tag, category and image resolves
 - [x] Crawl every internal link on the preview (82/82)
 - [x] Eagle banner and sidebar (home page and posts); checked at desktop and phone widths
-- [ ] Skim code blocks, dark mode and phone layout on a real phone
-- [ ] Post a test Giscus comment, then delete it from the repo's Discussions tab
+- [x] Skim code blocks, dark mode and phone layout on a real phone ("looks great", 2026-11-15)
+- [x] Post a test Giscus comment, then delete it from the repo's Discussions tab (2026-11-15)
 - [x] Security audit (2026-10-24), see below
 
 ### Security audit (2026-10-24)
@@ -238,5 +238,4 @@ None. Theme decided (PaperMod). Feature images are optional with PaperMod.
 
 ## Next session
 
-Cutover is done. Left: step 4's two open items (real phone,
-test Giscus comment), and step 6 (let HostGator expire on Dec 8).
+Cutover is done. Left: step 6 (let HostGator expire on Dec 8).
