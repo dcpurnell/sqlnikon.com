@@ -194,20 +194,32 @@ for the preview path" step adds that prefix to root-relative links in posts. Onc
 custom domain is set, the base path is `/` and the step does nothing. Don't
 re-enable `canonifyURLs`: it breaks the menu and paging links on the preview.
 
-### 5. Cut over (target: mid-November, well before Dec 8)
-- [ ] Verify sqlnikon.com for the `dcpurnell` account in GitHub Pages settings
-      (Cloudflare TXT record `_github-pages-challenge-dcpurnell`)
-- [ ] Cloudflare DNS:
-  - [ ] Apex `A` records → 185.199.108.153, .109.153, .110.153, .111.153
-  - [ ] Apex `AAAA` records → 2606:50c0:8000::153, 8001::153, 8002::153, 8003::153
-  - [ ] `www` `CNAME` → `dcpurnell.github.io`
-  - [ ] All set to **DNS only** (grey cloud) until GitHub issues the certificate
-  - [ ] Delete the HostGator `MX` record and the `websitewelcome.com` SPF record.
-        Add `v=spf1 -all` so nobody can send mail as sqlnikon.com.
-- [ ] Set the custom domain in Pages settings and tick **Enforce HTTPS**
-- [ ] Re-test the 138 old URLs on the live domain, and check the preview link-prefix
-      step was skipped in the deploy log
-- [ ] Submit `https://sqlnikon.com/sitemap.xml` to Google Search Console
+### 5. Cut over (done 2026-11-15)
+- [x] Verify sqlnikon.com for the `dcpurnell` account in GitHub Pages settings
+      (Cloudflare TXT record `_github-pages-challenge-dcpurnell`; keep it)
+- [x] Cloudflare DNS:
+  - [x] Apex `A` records → 185.199.108.153, .109.153, .110.153, .111.153
+  - [x] Apex `AAAA` records → 2606:50c0:8000::153, 8001::153, 8002::153, 8003::153
+  - [x] `www` `CNAME` → `dcpurnell.github.io`
+  - [x] All **DNS only** (grey cloud). One proxied record is enough to proxy the whole name.
+  - [x] Deleted the old cPanel/Bluehost records (MX, mail/ftp/webmail/whm and other
+        hostnames, SRV, DKIM, the Bluehost NS records). SPF is now `v=spf1 -all`;
+        added DMARC `v=DMARC1; p=reject;`. 13 records remain, including the
+        unrelated `podsync` tunnel (keep it).
+- [x] Set the custom domain and **Enforce HTTPS**. The certificate didn't arrive
+      until the custom domain was removed and re-added; then it was approved at once
+      (covers sqlnikon.com and www, expires 2027-02-13, GitHub renews it).
+- [x] Re-tested on the live domain: every post, page, category, tag in use and every
+      image the posts reference returns 200. http and www redirect to
+      https://sqlnikon.com. The preview link-prefix step was skipped (empty base path).
+      Expected 404s: full-size uploads no post uses, empty tags (1433, 1434, 2000)
+      and the empty Uncategorized category.
+- [x] Google Search Console: domain property verified through Cloudflare
+      (`google-site-verification` TXT; keep it)
+- [x] Submitted `sitemap.xml` in Search Console
+
+WordPress fallback until Dec 8: point the apex `A` record back to the old HostGator
+IP (proxied) and remove the GitHub A/AAAA records.
 
 ### 6. Wind down
 - [ ] Keep the WordPress site untouched until Dec 8 as a fallback
@@ -226,5 +238,5 @@ None. Theme decided (PaperMod). Feature images are optional with PaperMod.
 
 ## Next session
 
-Pick up at step 4's two open items, then step 5. Say "start the cutover" to go
-through the DNS changes one at a time.
+Cutover is done. Left: step 4's two open items (real phone,
+test Giscus comment), and step 6 (let HostGator expire on Dec 8).
